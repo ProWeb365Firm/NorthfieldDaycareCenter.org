@@ -1,0 +1,44 @@
+/* Mobile + tablet menu fixes for the static Northfield Day Care Center site.
+   Desktop (wider than 1024px) is unchanged. */
+@media (max-width: 1024px) {
+  html, body { overflow-x: hidden; }
+  #line-menu, #line-menu > div, #block-superfish-1, #main_menu { height: auto !important; }
+  #block-superfish-1 { position: relative; }
+  a.menu-mobile {
+    position: static !important; display: flex !important; align-items: center; gap: 12px;
+    width: auto !important; height: 50px; padding: 0 15px !important; margin: 0 !important;
+    color: #fff !important; font: 400 18px/50px arial, tahoma, "Times New Roman", Times, serif !important;
+    text-decoration: none !important; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  }
+  a.menu-mobile i { display: none !important; }
+  a.menu-mobile::before {
+    content: ""; display: inline-block; width: 24px; height: 3px; border-radius: 2px;
+    background: #fff; box-shadow: 0 -7px 0 #fff, 0 7px 0 #fff;
+  }
+  a.menu-mobile::after { content: "Menu"; }
+  #block-superfish-1.nfd-open a.menu-mobile::before {
+    width: 22px; height: 22px; border-radius: 0; box-shadow: none;
+    background:
+      linear-gradient(45deg, transparent 43%, #fff 43%, #fff 57%, transparent 57%),
+      linear-gradient(-45deg, transparent 43%, #fff 43%, #fff 57%, transparent 57%);
+  }
+  a.menu-mobile:focus:not(:focus-visible) { outline: none; }
+  #main_menu #superfish-1 {
+    display: none !important; position: static !important; float: none !important;
+    width: 100% !important; height: auto !important; margin: 0 !important; padding: 0 !important;
+    background: #ac94e9;
+  }
+  #block-superfish-1.nfd-open #superfish-1 { display: block !important; }
+  #main_menu #superfish-1 > li {
+    float: none !important; display: block !important; width: 100% !important; height: auto !important;
+    margin: 0 !important; border-top: 1px solid rgba(255,255,255,.35);
+  }
+  #main_menu #superfish-1 > li.active,
+  #main_menu #superfish-1 > li.current-menu-item { background: #ffbc2d !important; }
+  #main_menu #superfish-1 > li > span { display: block !important; width: auto !important; height: auto !important; padding: 0 !important; }
+  #main_menu #superfish-1 > li a {
+    display: block !important; width: auto !important; padding: 12px 20px !important;
+    text-align: left !important; line-height: 26px !important;
+  }
+  #superfish-2 { width: auto !important; }
+}
